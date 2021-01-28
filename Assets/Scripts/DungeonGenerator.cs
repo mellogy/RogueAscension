@@ -16,6 +16,8 @@ public class DungeonGenerator : MonoBehaviour
     [SerializeField]
     private Tile[] wallTiles; //!!Important!! Make sure that this array is in the appropriate order for tile bitmasking (ref in the Google Drive folder)
     [SerializeField]
+    private Tile fogTile;
+    [SerializeField]
     private generatorType generator;
 
     [Header("Object Refs")]
@@ -33,6 +35,7 @@ public class DungeonGenerator : MonoBehaviour
     //------- Internal vars
     private int[,] wallsMap;
     private enum generatorType { randomWalk, roguelike, maze }
+    private Color dark = new Color(.1f, .1f, .1f, 1f);
 
     //class used for the roguelike generator to make things easier down the line
     private class RectangularRoom
@@ -82,6 +85,7 @@ public class DungeonGenerator : MonoBehaviour
         }
         
         InitWallTiles();
+        //InitFog();
     }
 
     /* 
@@ -89,6 +93,19 @@ public class DungeonGenerator : MonoBehaviour
      * ----- Tilemap inits -----
      * -------------------------
      */
+    private void InitFog()
+    {
+        fogMap.ClearAllTiles();
+        for (int x = -(dungeonWidth / 2); x < (dungeonWidth / 2); x++)
+        {
+            for (int y = -(dungeonHeight / 2); y < (dungeonHeight / 2); y++)
+            {
+                fogMap.SetTile(new Vector3Int(x, y, 2), fogTile);
+            }
+        }
+
+    }
+
     private void InitFloorTiles()
     {
         //reset and floodfill floor map
@@ -97,8 +114,11 @@ public class DungeonGenerator : MonoBehaviour
         {
             for (int y = -(dungeonHeight / 2); y < (dungeonHeight / 2); y++)
             {
+                Vector3Int tilePos = new Vector3Int(x, y, 0);
                 Tile tile = floorTiles[Random.Range(0, floorTiles.Length)]; //pick a random tile from the array
                 floorMap.SetTile(new Vector3Int(x, y, 0), tile);
+                floorMap.SetTileFlags(tilePos, TileFlags.None);
+                floorMap.SetColor(tilePos, dark);
             }
         }
     }
@@ -132,8 +152,13 @@ public class DungeonGenerator : MonoBehaviour
                     int south = wallsMap[x, y - 1] * 8;
                     int tileIndex = north + east + south + west;
 
+                    Vector3Int tilePos = new Vector3Int(x - (dungeonWidth / 2), y - (dungeonHeight / 2), 0);
+
                     Tile tile = wallTiles[tileIndex];
-                    solidMap.SetTile(new Vector3Int(x - (dungeonWidth / 2), y - (dungeonHeight / 2), 1), tile);
+                    solidMap.SetTile(tilePos, tile);
+                    solidMap.SetTileFlags(tilePos, TileFlags.None);
+                    solidMap.SetColor(tilePos, dark);
+
                 }
             }
         }
