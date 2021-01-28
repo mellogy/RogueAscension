@@ -19,6 +19,8 @@ public class DungeonGenerator : MonoBehaviour
     private Tile fogTile;
     [SerializeField]
     private generatorType generator;
+    [SerializeField]
+    private GameObject[] enemyTypes;
 
     [Header("Object Refs")]
     [SerializeField]
@@ -36,6 +38,7 @@ public class DungeonGenerator : MonoBehaviour
     private int[,] wallsMap;
     private enum generatorType { randomWalk, roguelike, maze }
     private Color dark = new Color(.1f, .1f, .1f, 1f);
+    private List<GameObject> enemies = new List<GameObject>();
 
     //class used for the roguelike generator to make things easier down the line
     private class RectangularRoom
@@ -86,6 +89,14 @@ public class DungeonGenerator : MonoBehaviour
         
         InitWallTiles();
         //InitFog();
+    }
+
+    public void Step()
+    {
+        foreach (var mob in enemies)
+        {
+            mob.GetComponent<MobController>().Step();
+        }
     }
 
     /* 
@@ -171,6 +182,8 @@ public class DungeonGenerator : MonoBehaviour
      */
     private int[,] RandomWalkDungeon()
     {
+        int enemyOdds = 10; //odds of spawning an enemy, 1/x
+
         //array to hold room layout
         int[,] map = new int[dungeonWidth,dungeonHeight];
         //TODO: is there really no easier way to clear an array? this feels inefficient
@@ -197,6 +210,13 @@ public class DungeonGenerator : MonoBehaviour
         {
             //carve current spot in map
             map[cx, cy] = 0;
+
+            if (Random.Range(1,enemyOdds+1) == enemyOdds)
+            {
+                GameObject enemy;
+                enemy = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Length)], new Vector3(cx + 0.5f - dungeonWidth/2, cy + 0.5f - dungeonHeight/2, 0), Quaternion.identity);
+                enemies.Add(enemy);
+            }
 
             //are we gonna change direction?
             if (Random.Range(1,odds+1) == odds)

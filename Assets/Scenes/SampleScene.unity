@@ -247,24 +247,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 863017957307638564}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &520347352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520347349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 571b9c4b431c1844095957ea9f883f57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maps:
-  - {fileID: 1861820165}
-  - {fileID: 930039496}
-  - {fileID: 508643771}
-  sightRadius: 2
-  emitPoint: {fileID: 1810051815}
 --- !u!1 &930039492
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,12 +644,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1810051815 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 150448622623362745, guid: 103cae5d56aaf244e8776ef9218c041b,
-    type: 3}
-  m_PrefabInstance: {fileID: 863017957307638564}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1830577600
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +705,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d8a12056bca4c0c4c83153ae3b89d5fe, type: 2}
   fogTile: {fileID: 11400000, guid: 454ba501a6f2f414684225161074bea7, type: 2}
   generator: 0
+  enemyTypes:
+  - {fileID: 6107442896459321277, guid: ca524978eed88e64daec5d3129c8d073, type: 3}
   floorMap: {fileID: 1861820165}
   decoMap: {fileID: 508643771}
   solidMap: {fileID: 930039496}
@@ -909,11 +887,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 520347352, guid: 103cae5d56aaf244e8776ef9218c041b, type: 3}
+      propertyPath: maps.Array.data[0]
+      value: 
+      objectReference: {fileID: 1861820165}
+    - target: {fileID: 520347352, guid: 103cae5d56aaf244e8776ef9218c041b, type: 3}
+      propertyPath: maps.Array.data[1]
+      value: 
+      objectReference: {fileID: 930039496}
+    - target: {fileID: 520347352, guid: 103cae5d56aaf244e8776ef9218c041b, type: 3}
+      propertyPath: maps.Array.data[2]
+      value: 
+      objectReference: {fileID: 508643771}
     - target: {fileID: 863017956888100337, guid: 103cae5d56aaf244e8776ef9218c041b,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 863017956888100338, guid: 103cae5d56aaf244e8776ef9218c041b,
+        type: 3}
+      propertyPath: gameMaster
+      value: 
+      objectReference: {fileID: 1830577601}
     - target: {fileID: 863017956888100339, guid: 103cae5d56aaf244e8776ef9218c041b,
         type: 3}
       propertyPath: m_RootOrder

@@ -8,7 +8,7 @@ public class CheckFog : MonoBehaviour
     [SerializeField]
     private Tilemap[] maps; //maps affected by fov
     [SerializeField]
-    private int sightRadius = 3; //how far can we see
+    public int sightRadius = 3; //how far can we see
     [SerializeField]
     private Transform emitPoint; //where is this emitting from
 

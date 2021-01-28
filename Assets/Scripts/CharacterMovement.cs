@@ -18,10 +18,17 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
+    [SerializeField]
+    private DungeonGenerator gameMaster;
+
+    [SerializeField]
+    private SpriteMask sightRadius;
+
 
     void Start()
     {
         movePoint.parent = null; //ditch the parent to make sure the target stays still (if we didn't do this, it would move w the player)
+        sightRadius.transform.localScale = Vector3.one * (gameObject.GetComponent<CheckFog>().sightRadius*2.5f);
     }
 
     // Update is called once per frame
@@ -36,12 +43,14 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             anim.SetBool("Walk", false);
+
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0), .25f, solid)) 
                 { 
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
                 }
+                gameMaster.Step();
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) //use an elseif to prevent diagonal movement
             {
@@ -49,6 +58,7 @@ public class CharacterMovement : MonoBehaviour
                 {
                     movePoint.position += new Vector3(0, Input.GetAxisRaw("Vertical"), 0);
                 }
+                gameMaster.Step();
             }
         }
     }
