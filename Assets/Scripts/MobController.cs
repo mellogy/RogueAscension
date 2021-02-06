@@ -14,9 +14,12 @@ public class MobController : MonoBehaviour
     private Animator anim;
     [SerializeField]
     private AIType ai;
+    [SerializeField]
+    private float health = 1f;
 
     private int dir;
     private enum AIType { randomWander }
+    private SpriteRenderer sprite;
 
     //TODO: This could probably be implemented in a better way
     private bool queueMove = false;
@@ -27,6 +30,7 @@ public class MobController : MonoBehaviour
     {
         movePoint.parent = null; //ditch the parent to make sure the target stays still (if we didn't do this, it would move w the entity)
         dir = Random.Range(0, 4);
+        sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -89,5 +93,19 @@ public class MobController : MonoBehaviour
         {
             movePoint.position += new Vector3(0, my, 0);
         }
+    }
+
+    public void Hurt(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ public class CheckFog : MonoBehaviour
     [SerializeField]
     public int sightRadius = 3; //how far can we see
     [SerializeField]
-    private Transform emitPoint; //where is this emitting from
+    public Transform emitPoint; //where is this emitting from
 
     private Color dark = Color.gray;
     private Color lit = Color.white;
@@ -25,6 +25,9 @@ public class CheckFog : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //as long as there isn't an emit point, keep trying to find the player
+        if (!emitPoint) { emitPoint = GameObject.FindGameObjectWithTag("Player").transform; }
+
         frames++;
         if (frames % 4 == 0)
         {

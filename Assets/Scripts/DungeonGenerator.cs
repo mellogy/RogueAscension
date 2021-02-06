@@ -6,13 +6,13 @@ using UnityEngine.Tilemaps;
 public class DungeonGenerator : MonoBehaviour
 {
     //------- Inspector vars
-    [Header("Dungeon Parameters")]
+    [Header("Generation Parameters")]
     [SerializeField]
     private int dungeonWidth = 100;
     [SerializeField]
     private int dungeonHeight = 100;
     [SerializeField]
-    private Tile[] floorTiles; 
+    private Tile[] floorTiles;
     [SerializeField]
     private Tile[] wallTiles; //!!Important!! Make sure that this array is in the appropriate order for tile bitmasking (ref in the Google Drive folder)
     [SerializeField]
@@ -21,6 +21,22 @@ public class DungeonGenerator : MonoBehaviour
     private generatorType generator;
     [SerializeField]
     private GameObject[] enemyTypes;
+    [SerializeField]
+    private Texture2D AllDirRooms;
+    [SerializeField]
+    private Texture2D LRRooms;
+    [SerializeField]
+    private Texture2D UDRooms;
+    [SerializeField]
+    private Texture2D blankRoom;
+    [SerializeField]
+    private Texture2D bonusRooms;
+
+    [Header("Special Parameters")]
+    [SerializeField]
+    private int maxShops = 1;
+    [SerializeField]
+    private Texture2D shops;
 
     [Header("Object Refs")]
     [SerializeField]
@@ -30,9 +46,20 @@ public class DungeonGenerator : MonoBehaviour
     [SerializeField]
     private Tilemap solidMap; //tilemap for solid objects
     [SerializeField]
-    private Tilemap fogMap; //tilemap for fog of war
+    private GameObject playerObj; //player ref
     [SerializeField]
-    private GameObject player; //player ref for fog of war
+    private LayerMask solid;
+
+    [Header("Debug")]
+    [SerializeField]
+    private bool noFog;
+
+    private GameObject player;
+    private CheckFog fog;
+    private int px;
+    private int py;
+
+
 
     //------- Internal vars
     private int[,] wallsMap;
@@ -40,35 +67,15 @@ public class DungeonGenerator : MonoBehaviour
     private Color dark = new Color(.1f, .1f, .1f, 1f);
     private List<GameObject> enemies = new List<GameObject>();
 
-    //class used for the roguelike generator to make things easier down the line
-    private class RectangularRoom
-    {
-        public int x, y, width, height;
-        internal int x2, y2;
-        
-        void Awake()
-        {
-            x2 = x + width;
-            y2 = y + height;
-        }
-
-        public Vector2Int center
-        {
-            get
-            {
-                int centerX = (int)((x + x2) / 2);
-                int centerY = (int)((y + y2) / 2);
-
-                return new Vector2Int(centerX, centerY);
-            }
-        }
-
-
-    }
-
 
     void Start()
     {
+        if (noFog)
+        {
+            CheckFog fog = gameObject.GetComponent<CheckFog>();
+            fog.enabled = false;
+        }
+        wallsMap = new int[dungeonWidth + 1, dungeonHeight + 1];
         InitFloorTiles();
 
         switch (generator)
@@ -77,7 +84,7 @@ public class DungeonGenerator : MonoBehaviour
                 wallsMap = RandomWalkDungeon();
                 break;
             case generatorType.roguelike:
-                wallsMap = RoguelikeDungeon(6,10,50);
+                wallsMap = RoguelikeDungeon(10, 10);
                 break;
             case generatorType.maze:
                 wallsMap = RandomWalkDungeon();
@@ -86,9 +93,10 @@ public class DungeonGenerator : MonoBehaviour
                 wallsMap = RandomWalkDungeon();
                 break;
         }
-        
+
         InitWallTiles();
-        //InitFog();
+
+        player = Instantiate(playerObj, new Vector3(px - 0.5f, py - 0.5f, 0), Quaternion.identity);
     }
 
     public void Step()
@@ -104,32 +112,23 @@ public class DungeonGenerator : MonoBehaviour
      * ----- Tilemap inits -----
      * -------------------------
      */
-    private void InitFog()
-    {
-        fogMap.ClearAllTiles();
-        for (int x = -(dungeonWidth / 2); x < (dungeonWidth / 2); x++)
-        {
-            for (int y = -(dungeonHeight / 2); y < (dungeonHeight / 2); y++)
-            {
-                fogMap.SetTile(new Vector3Int(x, y, 2), fogTile);
-            }
-        }
-
-    }
 
     private void InitFloorTiles()
     {
         //reset and floodfill floor map
         floorMap.ClearAllTiles();
-        for (int x = -(dungeonWidth / 2); x < (dungeonWidth / 2); x++)
+        for (int x = 0; x < dungeonWidth; x++)
         {
-            for (int y = -(dungeonHeight / 2); y < (dungeonHeight / 2); y++)
+            for (int y = 0; y < dungeonHeight; y++)
             {
                 Vector3Int tilePos = new Vector3Int(x, y, 0);
                 Tile tile = floorTiles[Random.Range(0, floorTiles.Length)]; //pick a random tile from the array
                 floorMap.SetTile(new Vector3Int(x, y, 0), tile);
                 floorMap.SetTileFlags(tilePos, TileFlags.None);
-                floorMap.SetColor(tilePos, dark);
+                if (!noFog)
+                {
+                    floorMap.SetColor(tilePos, dark);
+                }
             }
         }
     }
@@ -139,10 +138,22 @@ public class DungeonGenerator : MonoBehaviour
         //reset wall map
         solidMap.ClearAllTiles();
 
-        //fill map appropriately 
-        for (int x = 1; x < dungeonWidth - 1; x++)
+        //set side walls
+        for (int x = 0; x < dungeonWidth; x++)
         {
-            for (int y = 1; y < dungeonHeight - 1; y++)
+            for (int y = 0; y < dungeonHeight; y++)
+            {
+                if (x == 0 || y == 0 || x == dungeonWidth - 1 || y == dungeonHeight - 1)
+                {
+                    wallsMap[x, y] = 1;
+                }
+            }
+        }
+
+        //fill map appropriately 
+        for (int x = 0; x < dungeonWidth; x++)
+        {
+            for (int y = 0; y < dungeonHeight; y++)
             {
                 /* ----- Tile bitmasking
                  * We use the map we made earlier to add up neighboring cells using binary values like this:
@@ -157,22 +168,27 @@ public class DungeonGenerator : MonoBehaviour
                 { //only do this if the current tile should be a wall
 
                     //the y values are swapped here, for some reason. i don't know why. but it doesn't work otherwise, so don't touch. 
-                    int north = wallsMap[x, y + 1];
-                    int west = wallsMap[x - 1, y] * 2;
-                    int east = wallsMap[x + 1, y] * 4;
-                    int south = wallsMap[x, y - 1] * 8;
+                    int north = wallsMap[x, Mathf.Clamp(y + 1, 0, dungeonHeight - 1)];
+                    int west = wallsMap[Mathf.Clamp(x - 1, 0, dungeonWidth - 1), y] * 2;
+                    int east = wallsMap[Mathf.Clamp(x + 1, 0, dungeonWidth - 1), y] * 4;
+                    int south = wallsMap[x, Mathf.Clamp(y - 1, 0, dungeonHeight - 1)] * 8;
                     int tileIndex = north + east + south + west;
 
-                    Vector3Int tilePos = new Vector3Int(x - (dungeonWidth / 2), y - (dungeonHeight / 2), 0);
+                    Vector3Int tilePos = new Vector3Int(x, y, 0);
 
                     Tile tile = wallTiles[tileIndex];
                     solidMap.SetTile(tilePos, tile);
                     solidMap.SetTileFlags(tilePos, TileFlags.None);
-                    solidMap.SetColor(tilePos, dark);
+                    if (!noFog)
+                    {
+                        solidMap.SetColor(tilePos, dark);
+                    }
 
                 }
+
             }
         }
+
     }
 
     /* 
@@ -180,12 +196,13 @@ public class DungeonGenerator : MonoBehaviour
      * ----- Generation algorithms -----
      * ---------------------------------
      */
+    // -------------------- Random Walk
     private int[,] RandomWalkDungeon()
     {
         int enemyOdds = 10; //odds of spawning an enemy, 1/x
 
         //array to hold room layout
-        int[,] map = new int[dungeonWidth,dungeonHeight];
+        int[,] map = new int[dungeonWidth, dungeonHeight];
         //TODO: is there really no easier way to clear an array? this feels inefficient
         for (int i = 0; i < dungeonWidth; i++)
         {
@@ -200,26 +217,29 @@ public class DungeonGenerator : MonoBehaviour
         int cy = dungeonHeight / 2;
         int cdir = Random.Range(0, 4);
 
+        px = cx;
+        py = cy;
+
         //how many steps should we take?
         int steps = 1500;
 
         //odds of changing direction as a 1/x chance
         int odds = 2;
 
-        for (int i=0; i<steps; i++)
+        for (int i = 0; i < steps; i++)
         {
             //carve current spot in map
             map[cx, cy] = 0;
 
-            if (Random.Range(1,enemyOdds+1) == enemyOdds)
+            if (Random.Range(1, enemyOdds + 1) == enemyOdds)
             {
                 GameObject enemy;
-                enemy = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Length)], new Vector3(cx + 0.5f - dungeonWidth/2, cy + 0.5f - dungeonHeight/2, 0), Quaternion.identity);
+                enemy = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Length)], new Vector3(cx + 0.5f - dungeonWidth / 2, cy + 0.5f - dungeonHeight / 2, 0), Quaternion.identity);
                 enemies.Add(enemy);
             }
 
             //are we gonna change direction?
-            if (Random.Range(1,odds+1) == odds)
+            if (Random.Range(1, odds + 1) == odds)
             {
                 cdir = Random.Range(0, 4);
             }
@@ -234,12 +254,13 @@ public class DungeonGenerator : MonoBehaviour
 
         return map;
     }
-
-    private int[,] RoguelikeDungeon(int minRoomSize, int maxRoomSize, int maxRooms)
+    //----------------- Roguelike/Spelunky Like
+    private int[,] RoguelikeDungeon(int roomWidth, int roomHeight)
     {
+        //----------------------
+        //- Initialization
+        //----------------------
         int[,] map = new int[dungeonWidth, dungeonHeight];
-        RectangularRoom[] rooms = new RectangularRoom[maxRooms];
-        Vector2[] roomCenters = new Vector2[maxRooms];
 
         //TODO: is there really no easier way to clear an array? this feels inefficient
         for (int i = 0; i < dungeonWidth; i++)
@@ -250,44 +271,138 @@ public class DungeonGenerator : MonoBehaviour
             }
         }
 
-        //add rooms to the map
-        for (int i = 0; i < maxRooms; i++)
+        //figure out how many rooms wide/tall the level is, then make a new array to store them
+        int genWidth = (int)(dungeonWidth / roomWidth);
+        int genHeight = (int)(dungeonHeight / roomHeight);
+        Texture2D[,] rooms = new Texture2D[genWidth, genHeight];
+
+
+        //clear array with bonus/optional rooms to start
+        for (int x = 0; x < genWidth; x++)
         {
-            int roomWidth = Random.Range(minRoomSize, maxRoomSize + 1); //add 1 to account for exclusive range
-            int roomHeight = Random.Range(minRoomSize, maxRoomSize + 1);
-            int roomX1 = Random.Range(2, dungeonWidth - roomWidth - 1);
-            int roomY1 = Random.Range(2, dungeonHeight - roomHeight - 1);
-            int roomX2 = roomX1 + roomWidth;
-            int roomY2 = roomY1 + roomHeight;
-
-            for (int rx = roomX1 + 1; rx < roomX1 + roomWidth - 1; rx++)
+            for (int y = 0; y < genHeight; y++)
             {
-                for (int ry = roomY1 + 1; ry < roomY1 + roomHeight - 1; ry++)
-                {
-                    map[rx, ry] = 0;
-                }
-            }
-
-            roomCenters[i] = new Vector2((roomX1 + roomX2) / 2, (roomY1 + roomY2) / 2);
-
-        }
-
-        //add tunnels
-        for (int i=1;i<maxRooms;i++)
-        {
-            Vector2 pointA = roomCenters[i];
-            Vector2 pointB = roomCenters[i - 1];
-
-            for (int tx = (int)pointA.x; tx < (int)pointB.x; tx++)
-            {
-                for (int ty = (int)pointA.y; ty < (int)pointA.y; ty++)
-                {
-                    map[tx, ty] = 0;
-                }
+                rooms[x, y] = bonusRooms;
             }
         }
 
-        player.transform.position = new Vector2(roomCenters[0].x - 50 + 0.5f, roomCenters[0].y - 50 + 0.5f);
+        //start pos set to a random x value in the possible generator width
+        int startPos = Random.Range(0, genWidth + 1);
+
+        //controller x/y
+        int cx = startPos;
+        int cy = 0;
+
+        //set the first room as open, then move the player there
+        rooms[cx, cy] = LRRooms;
+        px = (cx * roomWidth) + (roomWidth / 2);
+        py = (cy * roomHeight) + (roomHeight / 2);
+
+        //var for checking to see if the main solution path is ready or not
+        bool pathDone = false;
+
+        //----------------------
+        //- Main path generation
+        //----------------------
+        while (!pathDone)
+        {
+            int moveDir = Random.Range(1, 6);
+            if (moveDir == 1 || moveDir == 2)
+            {
+                //Left
+                if (rooms[Mathf.Clamp(cx - 1, 0, genWidth - 1), cy] == bonusRooms)
+                {
+                    cx -= 1;
+                    cx = Mathf.Clamp(cx, 0, genWidth - 1);
+                    rooms[cx, cy] = LRRooms;
+                }
+            }
+            if (moveDir == 3 || moveDir == 4)
+            {
+                //Right
+                if (rooms[Mathf.Clamp(cx + 1, 0, genWidth - 1), cy] == bonusRooms)
+                {
+                    cx += 1;
+                    cx = Mathf.Clamp(cx, 0, genWidth - 1);
+                    rooms[cx, cy] = LRRooms;
+                }
+            }
+            if (moveDir == 5)
+            {
+                //Down
+                rooms[cx, cy] = AllDirRooms;
+
+                cy += 1;
+                if (cy >= genHeight)
+                {
+                    //done!
+                    pathDone = true;
+                }
+                else
+                {
+                    rooms[cx, cy] = AllDirRooms;
+                }
+            }
+        }
+
+        //----------------------
+        //- Extra room generation
+        //----------------------
+        if (maxShops > 0)
+        {
+            int shopsMade = 0;
+            while (shopsMade < maxShops)
+            {
+                //pick a random spot in the map
+                int rx = Random.Range(0, genWidth);
+                int ry = Random.Range(0, genHeight);
+
+                //is this tile neighboring a 4-way intersection?
+                if (
+                    rooms[Mathf.Clamp(rx - 1, 0, genWidth), ry] == AllDirRooms ||
+                    rooms[Mathf.Clamp(rx + 1, 0, genWidth), ry] == AllDirRooms ||
+                    rooms[rx, Mathf.Clamp(ry - 1, 0, genHeight)] == AllDirRooms ||
+                    rooms[rx, Mathf.Clamp(ry + 1, 0, genHeight)] == AllDirRooms )
+                {
+                    //if so, set a shop here and increment the counter
+                    rooms[rx, ry] = shops;
+                    shopsMade++;
+                }
+            }
+        }
+
+        for (int x = 0; x < genWidth; x++)
+        {
+            for (int y = 0; y < genHeight; y++)
+            {
+                int[,] room = SpriteToRoom(rooms[x, y]);
+                int mx = x * roomWidth;
+                int my = y * roomHeight;
+                for (int i = 0; i < roomWidth; i++)
+                {
+                    for (int j = 0; j < roomHeight; j++)
+                    {
+                        if (room[i, j] > 1)
+                        {
+                            int d = Random.Range(0, room[i, j] + 1);
+                            if (d == room[i, j])
+                            {
+                                map[mx + i, my + j] = 1;
+                            }
+                            else
+                            {
+                                map[mx + i, my + j] = 2;
+                            }
+                        }
+                        else
+                        {
+                            map[mx + i, my + j] = room[i, j];
+                        }
+                    }
+                }
+            }
+        }
+
         return map;
     }
 
@@ -308,44 +423,46 @@ public class DungeonGenerator : MonoBehaviour
         return len * -Mathf.Sin(dir * Mathf.Deg2Rad);
     }
 
-    //checks if two rooms intersect
-    private bool CheckRoomIntersect(RectangularRoom room1, RectangularRoom room2)
-    {
-        return (
-            room1.x <= room2.x2 &&
-            room1.x2 >= room2.x &&
-            room1.y <= room2.y2 &&
-            room1.y2 >= room2.y
-        );
-    }
-
-    //dig an L-shaped tunnel between two rooms
-    private void TunnelBetween(RectangularRoom room1, RectangularRoom room2, int[,] map)
-    {
-        int dice = Random.Range(0, 2);
-        if (dice==0)
-        {
-            //dig horizontally, then vertically
-            SetArrayRegion(map, room1.center.x, room1.center.y, room2.center.x, room1.center.y, 0);
-            SetArrayRegion(map, room2.center.x, room1.center.y, room2.center.x, room2.center.y, 0);
-        }
-        else
-        {
-            //dig vertically, then horizontally
-            SetArrayRegion(map, room1.center.x, room1.center.y, room1.center.x, room2.center.y, 0);
-            SetArrayRegion(map, room2.center.x, room2.center.y, room1.center.x, room2.center.y, 0);
-        }
-    }
-
     //set a region of a 2d array
     private void SetArrayRegion(int[,] array, int x1, int y1, int x2, int y2, int val)
     {
-        for (int i=x1;i<x2;i++)
+        for (int i = x1; i < x2; i++)
         {
-            for (int j=y1;j<y2;j++)
+            for (int j = y1; j < y2; j++)
             {
                 array[i, j] = val;
             }
         }
+    }
+
+    //convert a particularly formatted sprite into an int array
+    private int[,] SpriteToRoom(Texture2D spr)
+    {
+        int sprWidth = 10;
+        int sprHeight = 10;
+        //map of pixel colors to their corresponding array values
+        Dictionary<Color, int> colorMap = new Dictionary<Color, int>
+        {
+            { Color.white, 0 },
+            { Color.black, 1 },
+            { Color.red, 2 }
+        };
+
+        int rndRange = spr.width / sprWidth;
+        int sprX = Random.Range(0, rndRange) * sprWidth;
+
+
+        //Color[] colors = spr.GetPixels(0, 0, sprWidth, sprHeight);
+        int[,] r = new int[sprWidth, sprHeight];
+        for (int x = sprX; x < sprX + sprWidth; x++)
+        {
+            for (int y = 0; y < sprHeight; y++)
+            {
+                Color c = spr.GetPixel(x, y);
+                r[x - sprX, y] = colorMap[c];
+            }
+        }
+
+        return r;
     }
 }

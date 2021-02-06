@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
     private float movementSpeed = 5f; //how fast player moves to target square
 
     [SerializeField]
-    private Transform movePoint; //target player is moving to
+    public Transform movePoint; //target player is moving to
 
     [SerializeField]
     private LayerMask solid; //layermask for impassable objects
@@ -24,11 +24,13 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private SpriteMask sightRadius;
 
+    [SerializeField]
+    private float health = 3f;
+
 
     void Start()
     {
         movePoint.parent = null; //ditch the parent to make sure the target stays still (if we didn't do this, it would move w the player)
-        sightRadius.transform.localScale = Vector3.one * (gameObject.GetComponent<CheckFog>().sightRadius*2.5f);
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class CharacterMovement : MonoBehaviour
                 { 
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
                 }
-                gameMaster.Step();
+                //gameMaster.Step();
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) //use an elseif to prevent diagonal movement
             {
@@ -58,7 +60,7 @@ public class CharacterMovement : MonoBehaviour
                 {
                     movePoint.position += new Vector3(0, Input.GetAxisRaw("Vertical"), 0);
                 }
-                gameMaster.Step();
+                //gameMaster.Step();
             }
         }
     }
