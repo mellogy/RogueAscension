@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 74894040a1d9aa24fad7726b99ec9452
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - projectile: {instanceID: 0}
+  - player: {instanceID: 0}
+  - spellIcon: {fileID: -1483665779731714255, guid: 1d642ccf850da264ab81035b67510eac,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
