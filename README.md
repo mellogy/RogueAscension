@@ -17,16 +17,24 @@ There's lots of parameters to play with on the dungeon generator, which is found
 
 #### Dungeon Parameters
 
-Dungeon Width/Height - How many rooms wide/tall the level will be.
-Room Width/Height - How wide/tall each room is in Unity units. All rooms on a given floor need to be the same size!
-Shops to Spawn - How many shops total will spawn in the level.
-Bonus Rooms to Spawn - How many bonus rooms should spawn at maximum. Less than this number may spawn if there isn't room for them. 
-Seed - The seed used when generating. 
+**Dungeon Width/Height** - How many rooms wide/tall the level will be.
+
+**Room Width/Height** - How wide/tall each room is in Unity units. All rooms on a given floor need to be the same size!
+
+**Shops to Spawn** - How many shops total will spawn in the level.
+
+**Bonus Rooms to Spawn** - How many bonus rooms should spawn at maximum. Less than this number may spawn if there isn't room for them. 
+
+**Seed** - The seed used when generating. 
 
 #### Prefabs
 
-Four Way Rooms - Rooms with openings on all four sides.
-Horizontal Rooms - Rooms with left and right exits.
-Vertical Rooms - Rooms with top and bottom exits.
-Shops - The pool of shops to spawn when generating.
-Bonus Rooms - Rooms that will be spawned at random points outside of the main solution path.
+**Four Way Rooms** - Rooms with openings on all four sides.
+
+**Horizontal Rooms** - Rooms with left and right exits.
+
+**Vertical Rooms** - Rooms with top and bottom exits.
+
+**Shops** - The pool of shops to spawn when generating.
+
+**Bonus Rooms** - Rooms that will be spawned at random points outside of the main solution path.
