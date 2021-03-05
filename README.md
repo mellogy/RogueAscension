@@ -15,7 +15,7 @@ To add them to the level generation, you can add them to the Dungeon Generator c
 
 There's lots of parameters to play with on the dungeon generator, which is found on the GameMaster object.
 
-#### Dungeon Parameters
+### Dungeon Parameters
 
 **Dungeon Width/Height** - How many rooms wide/tall the level will be.
 
@@ -27,7 +27,7 @@ There's lots of parameters to play with on the dungeon generator, which is found
 
 **Seed** - The seed used when generating. 
 
-#### Prefabs
+### Prefabs
 
 **Four Way Rooms** - Rooms with openings on all four sides.
 
