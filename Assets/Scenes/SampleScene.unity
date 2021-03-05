@@ -985,6 +985,8 @@ MonoBehaviour:
   roomWidth: 10
   roomHeight: 10
   shopsToSpawn: 1
+  bonusRoomsToSpawn: 3
+  seed: 0
   fourWayRooms:
   - {fileID: 3961401153427686372, guid: dc808cf7bb2c93f4eb1f8995ad7397c7, type: 3}
   - {fileID: 3961401153427686372, guid: 6e822747e28cc104ebbd208f8e6e2053, type: 3}
@@ -996,7 +998,7 @@ MonoBehaviour:
   shops:
   - {fileID: 3961401153427686372, guid: 7c91466f3d5c63d4aa638fac53f951a1, type: 3}
   bonusRooms:
-  - {fileID: 3961401153427686372, guid: dc808cf7bb2c93f4eb1f8995ad7397c7, type: 3}
+  - {fileID: 3961401153427686372, guid: 65102943be117a748820317917ad0f7b, type: 3}
   startRoom: {fileID: 3961401153427686372, guid: 7cb7608cde6783a44a1f1561e1203d73,
     type: 3}
   solidRoom: {fileID: 3961401153427686372, guid: b8754f5cfe0ad894cb49bd834eef164b,

@@ -16,6 +16,9 @@ public class DungeonGenerator : MonoBehaviour
     private int roomHeight = 10;
     [SerializeField]
     private int shopsToSpawn = 1;
+    [SerializeField]
+    private int bonusRoomsToSpawn = 3;
+    public int seed = 0;
 
     [Header("Prefabs")]
     [SerializeField]
@@ -40,7 +43,7 @@ public class DungeonGenerator : MonoBehaviour
 
     private void Start()
     {
-        dungeon = GenerateDungeon(); //initialize the dungeon
+        dungeon = GenerateDungeon(seed); //initialize the dungeon
 
         //spawn prefabs for each room
         for (int i = 0; i < dungeonWidth; i++)
@@ -92,6 +95,7 @@ public class DungeonGenerator : MonoBehaviour
         //----------------------
         RoomTypes[,] map = new RoomTypes[dungeonWidth, dungeonHeight]; //array to store the room types and spawn appropriately
         int shopsLeft = shopsToSpawn; //int to keep track of shops spawned
+        int bonusLeft = bonusRoomsToSpawn; //int to keep track of bonus rooms spawned
 
         //initialize the array
         for (int i = 0; i < dungeonWidth; i++)
@@ -192,6 +196,26 @@ public class DungeonGenerator : MonoBehaviour
                 {
                     map[rx, ry] = RoomTypes.Shop;
                     shopsLeft--;
+                }
+            }
+        }
+
+        while (bonusLeft > 0) //shops
+        {
+            int rx = Random.Range(0, dungeonWidth - 1);
+            int ry = Random.Range(0, dungeonHeight - 1);
+
+            if (map[rx, ry] == RoomTypes.Solid)
+            {
+                if (
+                    map[Mathf.Clamp(0, rx - 1, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
+                    map[Mathf.Clamp(0, rx - 1, dungeonWidth - 1), ry] == RoomTypes.Horizontal ||
+                    map[Mathf.Clamp(0, rx + 1, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
+                    map[Mathf.Clamp(0, rx + 1, dungeonWidth - 1), ry] == RoomTypes.Horizontal
+                    )
+                {
+                    map[rx, ry] = RoomTypes.Bonus;
+                    bonusLeft--;
                 }
             }
         }
