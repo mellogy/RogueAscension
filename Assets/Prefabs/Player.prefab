@@ -200,6 +200,7 @@ MonoBehaviour:
   dir: {x: 0, y: -1, z: -1}
   healthManager: {fileID: 7569024795645803989}
   bones: 0
+  invincibilityFrames: 30
 --- !u!114 &7569024795645803989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,3 +1541,4 @@ MonoBehaviour:
   KSlot: {fileID: 1908215604800969810}
   LSlot: {fileID: 9076359509313883034}
   boneText: {fileID: 8111464646528139515}
+  bombText: {fileID: 8806025175686156281}

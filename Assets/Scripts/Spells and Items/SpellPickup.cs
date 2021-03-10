@@ -9,10 +9,52 @@ public class SpellPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (mySpell.limitedUse == true)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                PlayerMovement p = other.gameObject.GetComponent<PlayerMovement>();
+
+                if (p.JBound == mySpell)
+                {
+                    p.JBound.usesLeft++;
+                    Destroy(gameObject);
+                }
+                else if (p.IBound == mySpell)
+                {
+                    p.IBound.usesLeft++;
+                    Destroy(gameObject);
+                }
+                else if (p.LBound == mySpell)
+                {
+                    p.LBound.usesLeft++;
+                    Destroy(gameObject);
+                }
+                else if (p.KBound == mySpell)
+                {
+                    p.KBound.usesLeft++;
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    getSpell(other);
+                }
+
+            }
+        }
+        else
+        {
+            getSpell(other);
+        }
+        
+    }
+
+    void getSpell(Collider other)
+    {
         if (other.gameObject.tag == "Player")
         {
             PlayerMovement p = other.gameObject.GetComponent<PlayerMovement>();
-            
+
             if (p.JBound == null)
             {
                 p.JBound = mySpell;

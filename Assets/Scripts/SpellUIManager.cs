@@ -17,10 +17,14 @@ public class SpellUIManager : MonoBehaviour
     Image LSlot;
     [SerializeField]
     TextMeshProUGUI boneText;
+    [SerializeField]
+    TextMeshProUGUI bombText;
 
     // Update is called once per frame
     void Update()
     {
+        bombText.text = "0";
+
         if (!player)
         {
             player = FindObjectOfType<PlayerMovement>();
@@ -30,6 +34,12 @@ public class SpellUIManager : MonoBehaviour
         {
             ISlot.sprite = player.IBound.spellIcon;
             ISlot.enabled = true;
+
+            if (player.IBound.GetComponent<Bomb>())
+            {
+                bombText.text = player.IBound.usesLeft.ToString();
+            }
+            
         } 
         else 
         {
@@ -40,6 +50,11 @@ public class SpellUIManager : MonoBehaviour
         {
             JSlot.sprite = player.JBound.spellIcon;
             JSlot.enabled = true;
+
+            if (player.JBound.GetComponent<Bomb>())
+            {
+                bombText.text = player.JBound.usesLeft.ToString();
+            }
         }
         else
         {
@@ -50,6 +65,11 @@ public class SpellUIManager : MonoBehaviour
         {
             KSlot.sprite = player.KBound.spellIcon;
             KSlot.enabled = true;
+
+            if (player.KBound.GetComponent<Bomb>())
+            {
+                bombText.text = player.KBound.usesLeft.ToString();
+            }
         }
         else
         {
@@ -60,6 +80,11 @@ public class SpellUIManager : MonoBehaviour
         {
             LSlot.sprite = player.LBound.spellIcon;
             LSlot.enabled = true;
+
+            if (player.LBound.GetComponent<Bomb>())
+            {
+                bombText.text = player.LBound.usesLeft.ToString();
+            }
         }
         else
         {
@@ -67,5 +92,7 @@ public class SpellUIManager : MonoBehaviour
         }
 
         boneText.text = player.bones.ToString();
+        
+
     }
 }

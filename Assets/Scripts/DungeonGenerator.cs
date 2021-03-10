@@ -220,6 +220,9 @@ public class DungeonGenerator : MonoBehaviour
             }
         }
 
+        //ensure the starting room spawned
+        map[startPos, 0] = RoomTypes.Start;
+
         return map;
     }
 
