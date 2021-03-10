@@ -9,7 +9,6 @@ public class SpellPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("touched by" + other.name);
         if (other.gameObject.tag == "Player")
         {
             PlayerMovement p = other.gameObject.GetComponent<PlayerMovement>();

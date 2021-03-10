@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SpellUIManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class SpellUIManager : MonoBehaviour
     Image KSlot;
     [SerializeField]
     Image LSlot;
+    [SerializeField]
+    TextMeshProUGUI boneText;
 
     // Update is called once per frame
     void Update()
@@ -62,5 +65,7 @@ public class SpellUIManager : MonoBehaviour
         {
             LSlot.enabled = false;
         }
+
+        boneText.text = player.bones.ToString();
     }
 }

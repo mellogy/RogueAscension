@@ -8,6 +8,8 @@ public class PlayerSpell : MonoBehaviour
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
+    public bool limitedUse = false;
+    public int usesLeft = 1;
     public bool rotateTowardsVelocity = true;
 
     public PlayerMovement player;

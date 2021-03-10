@@ -37,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
     private WorldManager gameMaster;
     public HealthManager healthManager;
     private float health;
+    public int bones = 0;
+    public int invincibilityFrames = 30;
+    private int iframe = 0;
+
 
 
     void Start()
@@ -49,15 +53,27 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.ResetTrigger("Hurt");
         MovePlayer();
         UseSpells();
         Debug();
 
         if (health != healthManager.currentHealth)
         {
-            anim.SetTrigger("Hurt");
+            if (iframe==0 && health > healthManager.currentHealth)
+            {
+                //hurt
+
+            }
             health = healthManager.currentHealth;
+        }
+
+        if (iframe>0)
+        {
+
+        }
+        else
+        {
+
         }
     }
 
@@ -110,6 +126,14 @@ public class PlayerMovement : MonoBehaviour
             if (JBound)
             {
                 PlayerSpell spell = Instantiate(JBound, transform.position, Quaternion.identity);
+                if (spell.limitedUse)
+                {
+                    spell.usesLeft--;
+                    if (spell.usesLeft <= 0)
+                    {
+                        JBound = null;
+                    }
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.I))
@@ -117,7 +141,14 @@ public class PlayerMovement : MonoBehaviour
             if (IBound)
             {
                 PlayerSpell spell = Instantiate(IBound, transform.position, Quaternion.identity);
-
+                if (spell.limitedUse)
+                {
+                    spell.usesLeft--;
+                    if (spell.usesLeft <= 0)
+                    {
+                        IBound = null;
+                    }
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.K))
@@ -125,7 +156,14 @@ public class PlayerMovement : MonoBehaviour
             if (KBound)
             {
                 PlayerSpell spell = Instantiate(KBound, transform.position, Quaternion.identity);
-
+                if (spell.limitedUse)
+                {
+                    spell.usesLeft--;
+                    if (spell.usesLeft <= 0)
+                    {
+                        KBound = null;
+                    }
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.L))
@@ -133,7 +171,14 @@ public class PlayerMovement : MonoBehaviour
             if (LBound)
             {
                 PlayerSpell spell = Instantiate(LBound, transform.position, Quaternion.identity);
-
+                if (spell.limitedUse)
+                {
+                    spell.usesLeft--;
+                    if (spell.usesLeft <= 0)
+                    {
+                        LBound = null;
+                    }
+                }
             }
         }
     }

@@ -43,7 +43,7 @@ public class DungeonGenerator : MonoBehaviour
 
     private void Start()
     {
-        dungeon = GenerateDungeon(seed); //initialize the dungeon
+        dungeon = GenerateDungeon(Random.Range(0, 1000)); //initialize the dungeon
 
         //spawn prefabs for each room
         for (int i = 0; i < dungeonWidth; i++)
@@ -88,7 +88,7 @@ public class DungeonGenerator : MonoBehaviour
 
     private RoomTypes[,] GenerateDungeon(int seed = 0)
     {
-        Random.InitState(seed);
+        //Random.InitState(seed);
 
         //----------------------
         //- Initialization
@@ -113,11 +113,11 @@ public class DungeonGenerator : MonoBehaviour
         //----------------------
         //- Level borders
         //----------------------
-        for (int i = -1; i < dungeonWidth+1; i++)
+        for (int i = -1; i < dungeonWidth + 1; i++)
         {
-            for (int j = -1; j < dungeonHeight+1; j++)
+            for (int j = -1; j < dungeonHeight + 1; j++)
             {
-                if (i==-1 || i==dungeonWidth || j==-1 || j==dungeonHeight)
+                if (i == -1 || i == dungeonWidth || j == -1 || j == dungeonHeight)
                 {
                     Instantiate(solidRoom, new Vector3(i * roomWidth, 0, j * roomHeight), Quaternion.identity);
                 }
@@ -132,13 +132,13 @@ public class DungeonGenerator : MonoBehaviour
 
         while (!pathDone)
         {
-            
+
             int moveDir = Random.Range(1, 6);
             if (moveDir == 1 || moveDir == 2)
             {
                 //Left
                 controller.x -= 1;
-                controller.x = Mathf.Clamp(0, controller.x, dungeonWidth - 1); //clamp x value to dungeon bounds
+                controller.x = Mathf.Clamp(controller.x, 0, dungeonWidth - 1); //clamp x value to dungeon bounds
 
                 if (map[controller.x, controller.y] == RoomTypes.Solid) //only set this room if it hasn't already been given a value
                 {
@@ -150,7 +150,7 @@ public class DungeonGenerator : MonoBehaviour
             {
                 //Right
                 controller.x += 1;
-                controller.x = Mathf.Clamp(0, controller.x, dungeonWidth - 1); //clamp x value to dungeon bounds
+                controller.x = Mathf.Clamp(controller.x, 0, dungeonWidth - 1); //clamp x value to dungeon bounds
 
                 if (map[controller.x, controller.y] == RoomTypes.Solid) //only set this room if it hasn't already been given a value
                 {
@@ -185,13 +185,13 @@ public class DungeonGenerator : MonoBehaviour
             int rx = Random.Range(0, dungeonWidth - 1);
             int ry = Random.Range(0, dungeonHeight - 1);
 
-            if (map[rx,ry]==RoomTypes.Solid)
+            if (map[rx, ry] == RoomTypes.Solid)
             {
                 if (
-                    map[Mathf.Clamp(0,rx-1,dungeonWidth-1),ry] == RoomTypes.FourWay ||
-                    map[Mathf.Clamp(0, rx - 1, dungeonWidth - 1), ry] == RoomTypes.Horizontal ||
-                    map[Mathf.Clamp(0, rx + 1, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
-                    map[Mathf.Clamp(0, rx + 1, dungeonWidth - 1), ry] == RoomTypes.Horizontal
+                    map[Mathf.Clamp(rx - 1, 0, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
+                    map[Mathf.Clamp(rx - 1, 0, dungeonWidth - 1), ry] == RoomTypes.Horizontal ||
+                    map[Mathf.Clamp(rx + 1, 0, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
+                    map[Mathf.Clamp(rx + 1, 0, dungeonWidth - 1), ry] == RoomTypes.Horizontal
                     )
                 {
                     map[rx, ry] = RoomTypes.Shop;
@@ -208,10 +208,10 @@ public class DungeonGenerator : MonoBehaviour
             if (map[rx, ry] == RoomTypes.Solid)
             {
                 if (
-                    map[Mathf.Clamp(0, rx - 1, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
-                    map[Mathf.Clamp(0, rx - 1, dungeonWidth - 1), ry] == RoomTypes.Horizontal ||
-                    map[Mathf.Clamp(0, rx + 1, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
-                    map[Mathf.Clamp(0, rx + 1, dungeonWidth - 1), ry] == RoomTypes.Horizontal
+                    map[Mathf.Clamp(rx - 1, 0, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
+                    map[Mathf.Clamp(rx - 1, 0, dungeonWidth - 1), ry] == RoomTypes.Horizontal ||
+                    map[Mathf.Clamp(rx + 1, 0, dungeonWidth - 1), ry] == RoomTypes.FourWay ||
+                    map[Mathf.Clamp(rx + 1, 0, dungeonWidth - 1), ry] == RoomTypes.Horizontal
                     )
                 {
                     map[rx, ry] = RoomTypes.Bonus;

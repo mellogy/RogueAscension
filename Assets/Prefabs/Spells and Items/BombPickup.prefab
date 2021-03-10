@@ -4855,7 +4855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySpell: {fileID: 9194532963137319893, guid: d630c0684f27d7d459ceaed6e5fb3493, type: 3}
-  myIcon: {fileID: -1483665779731714255, guid: 1d642ccf850da264ab81035b67510eac, type: 3}
+  myIcon: {fileID: -7586328038742414466, guid: 3cad688eb1a1bc24499d68bfc58fc129, type: 3}
 --- !u!1 &2639556365666599493
 GameObject:
   m_ObjectHideFlags: 0
@@ -5022,7 +5022,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1483665779731714255, guid: 1d642ccf850da264ab81035b67510eac,
+  m_Sprite: {fileID: -7586328038742414466, guid: 3cad688eb1a1bc24499d68bfc58fc129,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
