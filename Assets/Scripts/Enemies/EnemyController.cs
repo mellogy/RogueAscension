@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : Steppable
 {
+    [Header("Enemy Parameters")]
     public PlayerMovement player;
     public Transform movepoint;
     public enum MovementPattern { ChasePatrol, ChaseRandom, SetPath, RandomPath }
@@ -11,14 +12,36 @@ public class EnemyController : Steppable
     public Vector3[] path;
     public LayerMask solidLayer;
 
+    [Header("Animations")]
+    public AnimationClip leftWalk;
+    public AnimationClip rightWalk;
+    public AnimationClip upWalk;
+    public AnimationClip downWalk;
+
+    public AnimationClip leftIdle;
+    public AnimationClip rightIdle;
+    public AnimationClip upIdle;
+    public AnimationClip downIdle;
+
+    public AnimationClip death;
+    public AnimationClip hurt;
+
+
     private Vector3 newMove;
     private float moveSpeed = 5f;
     private int pathIndex = 0;
+
+    private Animator anim;
+    private int dir = 0;
+
+
 
     private void Start()
     {
         newMove = transform.position;
         player = FindObjectOfType<PlayerMovement>();
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     public virtual void Attack()
@@ -97,11 +120,43 @@ public class EnemyController : Steppable
 
     void Update()
     {
+        Vector3 newDir = transform.position - newMove;
+
         if (Vector3.Distance(transform.position, newMove) > 0f)
         {
             transform.position = Vector3.MoveTowards(transform.position, newMove, moveSpeed * Time.deltaTime);
-            transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z); //i know this is weird, but it keeps the enemies from sinking into the floor
+            transform.position = new Vector3(transform.position.x, 1f, transform.position.z); //i know this is weird, but it keeps the enemies from sinking into the floor
+
+            if (newDir.x < 0)
+            {
+                //left 3
+                dir = 3;
+            }
+            else if (newDir.x > 0) {
+                //right 1
+                dir = 1;
+            }
+            else if (newDir.z > 0)
+            {
+                //up 0
+                dir = 0;
+            }
+            else if (newDir.z < 0)
+            {
+                //down 2
+                dir = 2;
+            }
+
+            anim.SetFloat("Horizontal", -newDir.x);
+            anim.SetFloat("Vertical", -newDir.z);
+            //currentAnim = walkAnims[dir];
         }
+        else
+        {
+            //currentAnim = idleAnims[dir];
+        }
+
+        
     }
 
 

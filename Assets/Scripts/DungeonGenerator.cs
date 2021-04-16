@@ -35,6 +35,8 @@ public class DungeonGenerator : MonoBehaviour
     private GameObject startRoom;
     [SerializeField]
     private GameObject solidRoom;
+    [SerializeField]
+    private GameObject player;
 
     [HideInInspector]
     public enum RoomTypes { Solid, FourWay, Horizontal, Vertical, Shop, Bonus, Start }
@@ -75,6 +77,8 @@ public class DungeonGenerator : MonoBehaviour
                         break;
                     case RoomTypes.Start:
                         roomToSpawn = startRoom;
+                        player.transform.position = new Vector3(i * roomWidth + 5f, 2, j * roomHeight + 5f);
+                        player.GetComponent<PlayerMovement>().movePoint.transform.position = player.transform.position;
                         break;
                     default:
                         roomToSpawn = solidRoom;

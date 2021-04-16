@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     public int bones = 0;
     public int invincibilityFrames = 30;
     private int iframe = 0;
+    public UI_PlayerManager uiManager;
 
 
 
@@ -48,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
         movePoint.parent = null; //ditch the parent to make sure the target stays still (if we didn't do this, it would move w the player)
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<WorldManager>();
         health = healthManager.currentHealth;
+
+        uiManager.updateHealth = true;
     }
 
     // Update is called once per frame
@@ -62,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             if (iframe==0 && health > healthManager.currentHealth)
             {
                 //hurt
-
+                uiManager.updateHealth = true;
             }
             health = healthManager.currentHealth;
         }
@@ -125,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (JBound)
             {
-                PlayerSpell spell = Instantiate(JBound, transform.position, Quaternion.identity);
+                PlayerSpell spell = Instantiate(JBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 if (spell.limitedUse)
                 {
                     spell.usesLeft--;
@@ -140,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (IBound)
             {
-                PlayerSpell spell = Instantiate(IBound, transform.position, Quaternion.identity);
+                PlayerSpell spell = Instantiate(IBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 if (spell.limitedUse)
                 {
                     spell.usesLeft--;
@@ -155,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (KBound)
             {
-                PlayerSpell spell = Instantiate(KBound, transform.position, Quaternion.identity);
+                PlayerSpell spell = Instantiate(KBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 if (spell.limitedUse)
                 {
                     spell.usesLeft--;
@@ -170,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (LBound)
             {
-                PlayerSpell spell = Instantiate(LBound, transform.position, Quaternion.identity);
+                PlayerSpell spell = Instantiate(LBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 if (spell.limitedUse)
                 {
                     spell.usesLeft--;

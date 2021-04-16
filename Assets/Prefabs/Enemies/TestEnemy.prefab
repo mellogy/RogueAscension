@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863017956608032361}
   - component: {fileID: 863017956608032360}
+  - component: {fileID: 389565781033142549}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -101,7 +102,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: d3dfcda1d1f67ac4cada262d30447927, type: 3}
+  m_Sprite: {fileID: 7162887083386280368, guid: 21adf2eb92a6b0c4fbcff5b7df6d5fc4,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,6 +114,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &389565781033142549
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863017956608032367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be675122339a5774cb5fd35c7b1f2b5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &863017956888100337
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +241,16 @@ MonoBehaviour:
   solidLayer:
     serializedVersion: 2
     m_Bits: 64
+  leftWalk: {fileID: 7400000, guid: 081fc64a27891ec40b7dcd7a0ae8a327, type: 2}
+  rightWalk: {fileID: 7400000, guid: e85fdebb6b252fb4493481f4a3cfc995, type: 2}
+  upWalk: {fileID: 7400000, guid: fea08ad2365cfc548a95585fa38e6e97, type: 2}
+  downWalk: {fileID: 7400000, guid: 36a1ff5f15f43274bb915643ba3d5ee3, type: 2}
+  leftIdle: {fileID: 7400000, guid: 081fc64a27891ec40b7dcd7a0ae8a327, type: 2}
+  rightIdle: {fileID: 7400000, guid: e85fdebb6b252fb4493481f4a3cfc995, type: 2}
+  upIdle: {fileID: 7400000, guid: fea08ad2365cfc548a95585fa38e6e97, type: 2}
+  downIdle: {fileID: 7400000, guid: 36a1ff5f15f43274bb915643ba3d5ee3, type: 2}
+  death: {fileID: 0}
+  hurt: {fileID: 0}
 --- !u!1 &8777727912034233403
 GameObject:
   m_ObjectHideFlags: 0

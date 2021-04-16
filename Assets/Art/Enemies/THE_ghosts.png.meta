@@ -1,0 +1,1572 @@
+fileFormatVersion: 2
+guid: 21adf2eb92a6b0c4fbcff5b7df6d5fc4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6597746677024606656
+    second: THE_ghosts_0
+  - first:
+      213: 2160542491803981099
+    second: THE_ghosts_1
+  - first:
+      213: -3909878481467267088
+    second: THE_ghosts_2
+  - first:
+      213: 4445929580386539242
+    second: THE_ghosts_3
+  - first:
+      213: -447536455560922847
+    second: THE_ghosts_4
+  - first:
+      213: 4791570710117712088
+    second: THE_ghosts_5
+  - first:
+      213: -8239350705943102178
+    second: THE_ghosts_6
+  - first:
+      213: -6165263463547722329
+    second: THE_ghosts_7
+  - first:
+      213: 3524287681393151814
+    second: THE_ghosts_8
+  - first:
+      213: -4632823826583350322
+    second: THE_ghosts_9
+  - first:
+      213: 4197602786907010564
+    second: THE_ghosts_10
+  - first:
+      213: -6386817596806322873
+    second: THE_ghosts_11
+  - first:
+      213: -2947760334131743013
+    second: THE_ghosts_12
+  - first:
+      213: -8287014469062367519
+    second: THE_ghosts_13
+  - first:
+      213: -3081382885419333577
+    second: THE_ghosts_14
+  - first:
+      213: 6849448088947985836
+    second: THE_ghosts_15
+  - first:
+      213: -701828392773303890
+    second: THE_ghosts_16
+  - first:
+      213: -1234923085596850489
+    second: THE_ghosts_17
+  - first:
+      213: -1761316867012910597
+    second: THE_ghosts_18
+  - first:
+      213: 3302845323942733704
+    second: THE_ghosts_19
+  - first:
+      213: -7930174617130523257
+    second: THE_ghosts_20
+  - first:
+      213: -4056219598299878689
+    second: THE_ghosts_21
+  - first:
+      213: 2408269433333431930
+    second: THE_ghosts_22
+  - first:
+      213: -6508962344442386845
+    second: THE_ghosts_23
+  - first:
+      213: -2646565404202676834
+    second: THE_ghosts_24
+  - first:
+      213: -7868896433902203280
+    second: THE_ghosts_25
+  - first:
+      213: -3415378870920601834
+    second: THE_ghosts_26
+  - first:
+      213: -102702579057957686
+    second: THE_ghosts_27
+  - first:
+      213: 1849434026978577187
+    second: THE_ghosts_28
+  - first:
+      213: -5699035320770672223
+    second: THE_ghosts_29
+  - first:
+      213: 15405604276675787
+    second: THE_ghosts_30
+  - first:
+      213: 6313260959973573746
+    second: THE_ghosts_31
+  - first:
+      213: 7162887083386280368
+    second: THE_ghosts_32
+  - first:
+      213: 289455651396007833
+    second: THE_ghosts_33
+  - first:
+      213: -5731521637761751017
+    second: THE_ghosts_34
+  - first:
+      213: -234665767689491696
+    second: THE_ghosts_35
+  - first:
+      213: -2038199715656501551
+    second: THE_ghosts_36
+  - first:
+      213: -7080879170837065853
+    second: THE_ghosts_37
+  - first:
+      213: 5839562282839774502
+    second: THE_ghosts_38
+  - first:
+      213: 434378990047499718
+    second: THE_ghosts_39
+  - first:
+      213: -4259525059075513130
+    second: THE_ghosts_40
+  - first:
+      213: 7498526943481203863
+    second: THE_ghosts_41
+  - first:
+      213: -7469589424137605310
+    second: THE_ghosts_42
+  - first:
+      213: -8423954873114929670
+    second: THE_ghosts_43
+  - first:
+      213: -3297289779484234766
+    second: THE_ghosts_44
+  - first:
+      213: 3641427732606222023
+    second: THE_ghosts_45
+  - first:
+      213: -157780588980920257
+    second: THE_ghosts_46
+  - first:
+      213: -8898325770803409019
+    second: THE_ghosts_47
+  - first:
+      213: -6431759016451583534
+    second: THE_ghosts_48
+  - first:
+      213: -4292076921652086437
+    second: THE_ghosts_49
+  - first:
+      213: -6669304524052017129
+    second: THE_ghosts_50
+  - first:
+      213: 6418739587538471259
+    second: THE_ghosts_51
+  - first:
+      213: -459409176238158432
+    second: THE_ghosts_52
+  - first:
+      213: -4300172177465676314
+    second: THE_ghosts_53
+  - first:
+      213: 8403424305113590390
+    second: THE_ghosts_54
+  - first:
+      213: -8108597976197550977
+    second: THE_ghosts_55
+  - first:
+      213: -702670819395460132
+    second: THE_ghosts_56
+  - first:
+      213: -6773958565758413212
+    second: THE_ghosts_57
+  - first:
+      213: -2615764789707482191
+    second: THE_ghosts_58
+  - first:
+      213: 7092064914317078814
+    second: THE_ghosts_59
+  - first:
+      213: -7871519462144638132
+    second: THE_ghosts_60
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: THE_ghosts_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0463fe58a581074a0800000000000000
+      internalID: -6597746677024606656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b251d1203f9cbfd10800000000000000
+      internalID: 2160542491803981099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7233d8c325db9c0800000000000000
+      internalID: -3909878481467267088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae65757d56d13bd30800000000000000
+      internalID: 4445929580386539242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129f04ef6f70ac9f0800000000000000
+      internalID: -447536455560922847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_5
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d08bbc8c241f7240800000000000000
+      internalID: 4791570710117712088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_6
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1db568df22f7ad80800000000000000
+      internalID: -8239350705943102178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_7
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1435.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a52b8c7b85907aa0800000000000000
+      internalID: -6165263463547722329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1230.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f49b749f8c8e030800000000000000
+      internalID: 3524287681393151814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_9
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1230.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec398858647e4bfb0800000000000000
+      internalID: -4632823826583350322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1230.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40638cdae71e04a30800000000000000
+      internalID: 4197602786907010564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_11
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1230.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74525290c377d57a0800000000000000
+      internalID: -6386817596806322873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1230.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6371118937717d0800000000000000
+      internalID: -2947760334131743013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_13
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1230.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6e3033f3c9efc80800000000000000
+      internalID: -8287014469062367519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_14
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1230.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738cc91779abc35d0800000000000000
+      internalID: -3081382885419333577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad09393fb02e0f50800000000000000
+      internalID: 6849448088947985836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_16
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1c6739bca9246f0800000000000000
+      internalID: -701828392773303890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_17
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6021e1ffbacdee0800000000000000
+      internalID: -1234923085596850489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_18
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1aacc24ab8e87e0800000000000000
+      internalID: -1761316867012910597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_19
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887aaa9a25016dd20800000000000000
+      internalID: 3302845323942733704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_20
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785ad1b933c52f190800000000000000
+      internalID: -7930174617130523257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_21
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdaab5024c965b7c0800000000000000
+      internalID: -4056219598299878689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_22
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1025.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e35414a44eb6120800000000000000
+      internalID: 2408269433333431930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 820.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3662e13db358ba5a0800000000000000
+      internalID: -6508962344442386845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_24
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 820.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d49a779c2854bd0800000000000000
+      internalID: -2646565404202676834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_25
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 820.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ecbe272601cc290800000000000000
+      internalID: -7868896433902203280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_26
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 820.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f176923032a90d0800000000000000
+      internalID: -3415378870920601834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_27
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 820.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4ebb96c80239ef0800000000000000
+      internalID: -102702579057957686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_28
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 820.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b0495e2728aa910800000000000000
+      internalID: 1849434026978577187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_29
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 820.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a94f0f0295f8e0b0800000000000000
+      internalID: -5699035320770672223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc42672c05bb63000800000000000000
+      internalID: 15405604276675787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_31
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274019dd4653d9750800000000000000
+      internalID: 6313260959973573746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_32
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9197b0adfa76360800000000000000
+      internalID: 7162887083386280368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_33
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99730bf916a540400800000000000000
+      internalID: 289455651396007833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_34
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718eeb6ff6b8570b0800000000000000
+      internalID: -5731521637761751017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_35
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b6ce34abc4ebcf0800000000000000
+      internalID: -234665767689491696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_36
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6fdfe482cd6b3e0800000000000000
+      internalID: -2038199715656501551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_37
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 615.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f4bc409e9abbd90800000000000000
+      internalID: -7080879170837065853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6251f68f4fa4a0150800000000000000
+      internalID: 5839562282839774502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_39
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c59ca7d369370600800000000000000
+      internalID: 434378990047499718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_40
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4ede5d68023e4c0800000000000000
+      internalID: -4259525059075513130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_41
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c84e4b68e101860800000000000000
+      internalID: 7498526943481203863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_42
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f634c8effa65890800000000000000
+      internalID: -7469589424137605310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_43
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af55018cca9181b80800000000000000
+      internalID: -8423954873114929670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_44
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbe0545a6cad32d0800000000000000
+      internalID: -3297289779484234766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_45
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 410.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ceff3dca33f88230800000000000000
+      internalID: 3641427732606222023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f302759e3637fcdf0800000000000000
+      internalID: -157780588980920257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_47
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f0f875bdbc28480800000000000000
+      internalID: -8898325770803409019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_48
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1dc7f504dcdb6a0800000000000000
+      internalID: -6431759016451583534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_49
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b597648b7ca7f64c0800000000000000
+      internalID: -4292076921652086437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_50
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71059f0feded173a0800000000000000
+      internalID: -6669304524052017129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_51
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59c7fc95a1f31950800000000000000
+      internalID: 6418739587538471259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_52
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad05cbc9c9df99f0800000000000000
+      internalID: -459409176238158432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_53
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 205.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ede3291038b254c0800000000000000
+      internalID: -4300172177465676314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67aed2bd1e5fe9470800000000000000
+      internalID: 8403424305113590390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_55
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c2b421a19787f80800000000000000
+      internalID: -8108597976197550977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_56
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3a6e7dc9c9f36f0800000000000000
+      internalID: -702670819395460132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_57
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46651cc03901ef1a0800000000000000
+      internalID: -6773958565758413212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_58
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbd28d58cfe2bbd0800000000000000
+      internalID: -2615764789707482191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_59
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1171e5d6731c6260800000000000000
+      internalID: 7092064914317078814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE_ghosts_60
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0.875
+        width: 125
+        height: 205.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c438b4811ceb2c290800000000000000
+      internalID: -7871519462144638132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
