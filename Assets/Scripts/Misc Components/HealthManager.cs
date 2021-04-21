@@ -37,6 +37,13 @@ public class HealthManager : MonoBehaviour
                     drops--;
                 }
             }
+
+            if (gameObject.GetComponent<ExplodeOnDeath>())
+            {
+                gameObject.GetComponent<ExplodeOnDeath>().Explode();
+            }
+            
+
             if (gameObject.GetComponent<PlayerMovement>())
             {
                 //it's the player, game over
@@ -47,6 +54,7 @@ public class HealthManager : MonoBehaviour
                 //it's not the player, destroy it
                 Destroy(gameObject);
             }
+
             
         }
     }

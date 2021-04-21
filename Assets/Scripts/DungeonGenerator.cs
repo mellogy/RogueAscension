@@ -77,7 +77,7 @@ public class DungeonGenerator : MonoBehaviour
                         break;
                     case RoomTypes.Start:
                         roomToSpawn = startRoom;
-                        player.transform.position = new Vector3(i * roomWidth + 5f, 2, j * roomHeight + 5f);
+                        player.transform.position = new Vector3(i * roomWidth + 5.5f, 1f, j * roomHeight + 5.5f);
                         player.GetComponent<PlayerMovement>().movePoint.transform.position = player.transform.position;
                         break;
                     default:

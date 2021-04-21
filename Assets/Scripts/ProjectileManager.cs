@@ -35,24 +35,20 @@ public class ProjectileManager : Steppable
         life++;
         if (life >= duration)
         {
+            if (gameObject.GetComponent<ExplodeOnDeath>())
+            {
+                gameObject.GetComponent<ExplodeOnDeath>().Explode();
+            }
+
             Destroy(gameObject);
         }
 
         target.transform.position += moveDirection;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.GetComponent<HealthManager>())
-        {
-            other.gameObject.GetComponent<HealthManager>().takeDamage(damage);
-            Destroy(target);
-            Destroy(gameObject);
-        }
-        else
-        {
-            Destroy(target);
-            Destroy(gameObject);
-        }
+        Destroy(target);
+        Destroy(gameObject);
     }
 }

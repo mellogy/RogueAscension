@@ -12,7 +12,7 @@ public class Destructable : MonoBehaviour
     public Sprite particle;
     public GameObject deathParticles;
 
-    private void OnDestroy()
+    public void Explode()
     {
         Instantiate(deathParticles, transform.position, Quaternion.identity);
 

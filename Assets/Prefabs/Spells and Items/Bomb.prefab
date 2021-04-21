@@ -52,4 +52,5 @@ MonoBehaviour:
   usesLeft: 1
   rotateTowardsVelocity: 1
   player: {fileID: 0}
-  spellIcon: {fileID: 0}
+  spellIcon: {fileID: -7586328038742414466, guid: 3cad688eb1a1bc24499d68bfc58fc129,
+    type: 3}

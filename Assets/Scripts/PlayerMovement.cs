@@ -104,10 +104,8 @@ public class PlayerMovement : MonoBehaviour
                 if (Physics.OverlapSphere(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0), .25f, solid).Length == 0)
                 {
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
-
-
+                    gameMaster.Step();
                 }
-                gameMaster.Step();
 
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) //use an elseif to prevent diagonal movement
@@ -115,73 +113,99 @@ public class PlayerMovement : MonoBehaviour
                 if (Physics.OverlapSphere(movePoint.position + new Vector3(0, 0, Input.GetAxisRaw("Vertical")), .25f, solid).Length == 0)
                 {
                     movePoint.position += new Vector3(0, 0, Input.GetAxisRaw("Vertical"));
+                    gameMaster.Step();
 
                 }
-                gameMaster.Step();
+                
             }
         }
     }
 
     void UseSpells()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        //this section has a lot of repeated code
+        //i can't think of a better way to do it right now, but ideally it would be fixed at some point
+
+        if (Input.anyKeyDown)
         {
-            if (JBound)
+            string inString = Input.inputString.Substring(0, 1); //make sure we grab the first input only
+            PlayerSpell toUse = null;
+            bool useSpell = false;
+
+            if (inString.Length > 0)
             {
-                PlayerSpell spell = Instantiate(JBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
-                if (spell.limitedUse)
+                switch (inString)
                 {
-                    spell.usesLeft--;
-                    if (spell.usesLeft <= 0)
-                    {
-                        JBound = null;
-                    }
+                    case "j":
+                        if (JBound)
+                        {
+                            toUse = JBound;
+                            useSpell = true;
+                            if (JBound.limitedUse)
+                            {
+                                JBound.usesLeft--;
+                                if (JBound.usesLeft <= 0)
+                                {
+                                    JBound = null;
+                                }
+                            }
+                        }
+                        break;
+                    case "i":
+                        if (IBound)
+                        {
+                            toUse = IBound;
+                            useSpell = true;
+                            if (IBound.limitedUse)
+                            {
+                                IBound.usesLeft--;
+                                if (IBound.usesLeft <= 0)
+                                {
+                                    IBound = null;
+                                }
+                            }
+                        }
+                        break;
+                    case "k":
+                        if (KBound)
+                        {
+                            toUse = KBound;
+                            useSpell = true;
+                            if (KBound.limitedUse)
+                            {
+                                KBound.usesLeft--;
+                                if (KBound.usesLeft <= 0)
+                                {
+                                    KBound = null;
+                                }
+                            }
+                        }
+                        break;
+                    case "l":
+                        if (LBound)
+                        {
+                            toUse = LBound;
+                            useSpell = true;
+                            if (LBound.limitedUse)
+                            {
+                                LBound.usesLeft--;
+                                if (LBound.usesLeft <= 0)
+                                {
+                                    LBound = null;
+                                }
+                            }
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (IBound)
-            {
-                PlayerSpell spell = Instantiate(IBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
-                if (spell.limitedUse)
+
+                if (useSpell)
                 {
-                    spell.usesLeft--;
-                    if (spell.usesLeft <= 0)
-                    {
-                        IBound = null;
-                    }
+                    PlayerSpell spell = Instantiate(toUse, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            if (KBound)
-            {
-                PlayerSpell spell = Instantiate(KBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
-                if (spell.limitedUse)
-                {
-                    spell.usesLeft--;
-                    if (spell.usesLeft <= 0)
-                    {
-                        KBound = null;
-                    }
-                }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            if (LBound)
-            {
-                PlayerSpell spell = Instantiate(LBound, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
-                if (spell.limitedUse)
-                {
-                    spell.usesLeft--;
-                    if (spell.usesLeft <= 0)
-                    {
-                        LBound = null;
-                    }
-                }
+
             }
         }
     }

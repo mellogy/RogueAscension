@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2100393851427194354}
   - component: {fileID: 2100393851427194365}
-  - component: {fileID: 2100393851427194364}
   - component: {fileID: 1616462538625501735}
-  - component: {fileID: 3093357670293611447}
+  - component: {fileID: 2100393851427194364}
   - component: {fileID: 7820893465804758162}
+  - component: {fileID: 8081413437283254585}
   m_Layer: 0
   m_Name: FireballProjectile
   m_TagString: Projectile
@@ -50,6 +50,21 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   damage: 4
   duration: 8
+--- !u!114 &1616462538625501735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100393851427194366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f4d714664014a4f8b56982ad79d4d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticles: {fileID: 5229841914830910784, guid: f8dba0b98a20f0b4cb24cf5027e15110,
+    type: 3}
+  destroysObjects: 0
 --- !u!212 &2100393851427194364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,34 +116,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1616462538625501735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100393851427194366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f4d714664014a4f8b56982ad79d4d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathParticles: {fileID: 5229841914830910784, guid: f8dba0b98a20f0b4cb24cf5027e15110,
-    type: 3}
-  destroysObjects: 0
---- !u!135 &3093357670293611447
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100393851427194366}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0.2, y: 0, z: 0}
 --- !u!54 &7820893465804758162
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -145,3 +132,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &8081413437283254585
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100393851427194366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

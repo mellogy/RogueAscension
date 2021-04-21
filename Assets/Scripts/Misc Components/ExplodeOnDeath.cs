@@ -7,7 +7,7 @@ public class ExplodeOnDeath : MonoBehaviour
     public GameObject deathParticles;
     public bool destroysObjects = false;
 
-    private void OnDestroy()
+    public void Explode()
     {
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         Camera.main.GetComponent<CameraShake>().shakeDuration = 0.2f;
@@ -19,6 +19,7 @@ public class ExplodeOnDeath : MonoBehaviour
             {
                 if (c.gameObject.GetComponent<Destructable>() != null)
                 {
+                    c.gameObject.GetComponent<Destructable>().Explode();
                     Destroy(c.gameObject);
                 }
             }
